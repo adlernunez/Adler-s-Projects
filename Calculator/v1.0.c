@@ -9,11 +9,11 @@ float add(float x, float y);
 float sub(float x, float y);
 float mul(float x, float y);
 float div(float x, float y);
-void out(float z, char state[20],float x, float y);
+int out(float x,char character,float y,float z);
 
 int main(){
     /*********************************/
-    char operation[20];
+    char character;
     int c;
     float a,b, output, result;
 
@@ -23,49 +23,48 @@ int main(){
 
     /*********************************Input integers*/
 
-    printf("enter the first integer:\n");
-    scanf("%f",&a);
-    printf("enter the second integer:\n");
-    scanf("%f",&b);
+      printf("\n+---------------+\n");
+        printf("                 \n", result);
+        printf("+---------------+\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 7 | 8 | 9 | + |\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 4 | 5 | 6 | - |\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 1 | 2 | 3 | * |\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 0 | . | = | / |\n");
+        printf("| _ | _ | _ | _ |\n");
+
+    scanf("%f %c %f",&a,&character,&b);
+    
 
     /********************************option selection*/
-    printf("Select the subsequent number for the options below:\n");
-    printf("1. Add\n");
-    printf("2. Subtract\n");
-    printf("3. Multiplication\n");
-    printf("4. Division\n");
-    scanf("%d",&c);
+    
 
     /******************************/
-    switch(c)
-    
+    switch(character)
     {
-    case 1:
-    
+    case '+':
         output=add(a,b);
-        strcpy(operation, "sum");
         break;
     
-    case 2:
+    case '-':
         output=sub(a,b);
-        strcpy(operation, "difference");
         break;
 
-    case 3:
+    case 'x':
         output=mul(a,b);
-        strcpy(operation, "multiplication");
         break;
 
-    case 4:
+    case '/':
         output=div(a,b);
-        strcpy(operation, "division");
         break;
-        
-
+    
     }
 
     /*******************************Pushing answers to display*/
-    out(output,operation,a,b);
+    out(a,character,b,output);
 
 }
 
@@ -106,11 +105,24 @@ float div(float x, float y)
     }
 }
 /****************************Result*/
-void out(float z, char state[20],float x, float y)
+int out(float x,char character,float y,float z)
 {
-    printf("The %s of two numbers %.2f and %.2f is %.2f",state,x,y,z);
     
+     printf("\n+---------------+\n");
+        printf(" %.2f %c %.2f = %.2f  \n", x, character, y, z);
+        printf("+---------------+\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 7 | 8 | 9 | + |\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 4 | 5 | 6 | - |\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 1 | 2 | 3 | * |\n");
+        printf("| _ | _ | _ | _ |\n");
+        printf("| 0 | . | = | / |\n");
+        printf("| _ | _ | _ | _ |\n");
+        
 }
 
-/*****************************/
+/*****************************displayGUI*/
+
 
