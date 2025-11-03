@@ -1,27 +1,31 @@
 #include <stdio.h>
 
-int main()
-    {
+int main() {
     int n;
     printf("enter the size:\n");
-    scanf("%d",&n);
+    scanf("%d", &n);
 
-    int b=0;   
     int a[n];
-    int c;
+    int i;
+    int first, second;
+
     printf("enter the numbers:\n");
-    for(int i=0;i<n;i++)
-    {
-    scanf("%d",&a[i]);
-
-    if(a[i]>b){
-        b=a[i];
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
     }
-}
 
+    first = second = a[0];
 
+    for (i = 1; i < n; i++) {
+        if (a[i] > first) {
+            second = first;
+            first = a[i];
+        } else if (a[i] > second && a[i] != first) {
+            second = a[i];
+        }
+    }
 
+    printf("2nd largest number is: %d\n", second);
 
-
-printf("2nd largest numberoutput is:%d",c);
+    return 0;
 }
