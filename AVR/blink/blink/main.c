@@ -10,13 +10,13 @@
 
 int main(void)
 {
-	DDRD=0b00000100;
+	DDRB=0b00010000;
     /* Replace with your application code */
     while (1) 
     {
-		PORTD=0b00000100;
+		PORTB=0b00010000;//set at B5, is high
 		_delay_ms(3000);
-		PORTD=0b00000000;
+		PORTB=0b00010000;// set at B5, is low
 		_delay_ms(3000);
     }
 }
